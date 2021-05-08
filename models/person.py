@@ -1,7 +1,8 @@
 from datetime import date
+from abc import ABCMeta
 
 
-class Person:
+class Person(metaclass=ABCMeta):
     def __init__(self, name, date_of_birth: date, address):
         self.name = name
         self.date_of_birth = date_of_birth

@@ -21,10 +21,13 @@ teacher1 = Teacher(
     "Matemática-terceiro-ano",
 )
 
-print(student1.calculate_average_grade())
-print(student1)
-print(student2)
-print(teacher1)
-print(teacher1.take_attendance())
-print(student1.answer_attendance())
+# print(student1.calculate_average_grade())
+# print(student1)
+# print(student2)
+# print(teacher1)
+teacher1.take_attendance(student1, student2)
+# student1.answer_attendance()
 print(teacher1.close_averages(student1, student2))
+averages = teacher1.close_averages_with_accessable_name(student1, student2)
+for x in averages:
+    print(f"{x}: {averages[x]}")

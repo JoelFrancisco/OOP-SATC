@@ -12,14 +12,25 @@ class Teacher(Person):
         self.course = course
         self.subject = subject
 
-    def take_attendance(self):
-        return print("taking attendance")
+    def take_attendance(self, *students):
+        print("taking attendance")
+        for student in students:
+            print(f'{student.name}? ')
+            student.answer_attendance()
 
     def close_averages(self, *students):
         averages_tuple = namedtuple('Averages', list([student.name for
                                     student in students]))
         averages = averages_tuple(*[student.calculate_average_grade() for
                                     student in students])
+        print("closing averages")
+        return averages
+
+    def close_averages_with_accessable_name(self, *students):
+        averages = {
+            student.name: student.calculate_average_grade() for
+            student in students
+        }
         print("closing averages")
         return averages
 

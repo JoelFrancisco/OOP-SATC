@@ -17,7 +17,7 @@ class Student(Person):
         return average
 
     def answer_attendance(self):
-        return print("answering attendance")
+        print(f"{self.name} answering attendance")
 
     def __str__(self):
         printable = super().__str__()
